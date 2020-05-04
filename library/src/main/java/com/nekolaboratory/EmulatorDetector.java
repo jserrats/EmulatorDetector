@@ -64,7 +64,7 @@ public class EmulatorDetector {
         return false;
     }
 
-    private static boolean checkBasic() {
+    public static boolean checkBasic() {
         int rating = 0;
 
         if (Build.PRODUCT.equals("sdk_x86_64") ||

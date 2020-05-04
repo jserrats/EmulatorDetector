@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import com.nekolaboratory.EmulatorDetector
 import android.os.Build
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var check_text = this.findViewById<TextView>(R.id.check_text)
         
-        var text = "Build.PRODUCT: " + Build.PRODUCT +
+        var text = "Basic check: " + EmulatorDetector.checkBasic() +
+        "\nBuild.PRODUCT: " + Build.PRODUCT +
         "\nBuild.MANUFACTURER: " + Build.MANUFACTURER +
         "\nBuild.BRAND: " + Build.BRAND + 
         "\nBuild.DEVICE: " + Build.DEVICE + 
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         "\nBuild.HARDWARE: " + Build.HARDWARE + 
         "\nBuild.FINGERPRINT: " + Build.FINGERPRINT
 
+        Log.d("Emudetect",text)
         check_text.setText(text)
 
     }
